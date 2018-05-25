@@ -45,11 +45,22 @@ El objetivo principal de este producto es crear una herramienta web para visuali
 7. Acceso a diferentes usuarios, incluso para las estudiantes, para generar retroalimentación diaria.
 
 ### Muestra de pruebas y resultados de lluvia de ideas para definir el problema
+Proceso de brainstorming:
 
-(imagenes)
+![alt text](assets/images/brainstorming.jpg)
+
+Lluvia de ideas:
+![alt text](assets/images/lluvia de ideas.jpg)
+
 
 ## IDEACIÓN
-### Muestra de pruebas y resultados de lluvia de ideas para definir soluciones
+### Muestra de pruebas y resultados de lluvia de ideas para definir
+
+Primer prototipo:
+![alt text](assets/images/prototipo1.jpg)
+
+Segundo prototipo:
+![alt text](assets/images/prototipo2.jpg)
 
 ## SKETCHING & PROTOTYPING  
 
