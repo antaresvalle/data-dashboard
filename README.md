@@ -6,8 +6,18 @@
 
 ***
 
-## Flujo de trabajo
+## INTRODUCCION
 
+
+## HIPOTESIS
+
+## OBJETIVO
+
+## INVESTIGACION Y EMPATIA
+
+## IDEACION
+
+## SKETCHING & PROTOTYPING  
 1. Debes realizar un [**fork**](https://gist.github.com/ivandevp/1de47ae69a5e139a6622d78c882e1f74)
    de este repositorio.
 
