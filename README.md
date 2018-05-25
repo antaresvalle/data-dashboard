@@ -53,6 +53,9 @@ El objetivo principal de este producto es crear una herramienta web para visuali
 
 ## SKETCHING & PROTOTYPING  
 
+### Persona ###
+![Persona](./assets/images/Persona.PNG)
+  
 ### Historia del usuario
 
 ### Sketch de flujo de aplicación
