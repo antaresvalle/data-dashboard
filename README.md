@@ -57,7 +57,7 @@ Lluvia de ideas:
 ### Muestra de pruebas y resultados de lluvia de ideas para definir
 
 Primer prototipo:
-![alt text](assets/images/prototipo1.jpg)
+![alt text](assets/images/prototipo.jpg)
 
 Segundo prototipo:
 ![alt text](assets/images/prototipo2.jpg)
