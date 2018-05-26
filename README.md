@@ -47,20 +47,21 @@ El objetivo principal de este producto es crear una herramienta web para visuali
 ### Muestra de pruebas y resultados de lluvia de ideas para definir el problema
 Proceso de brainstorming:
 
-![alt text](assets/images/brainstorming.jpg)
+![Lluvia de ideas 01](assets/images/brainstorming.jpg)
 
 Lluvia de ideas:
-![alt text](assets/images/lluvia de ideas.jpg)
+
+![Lluvia de ideas 02](assets/images/lluvia-de-ideas.jpg)
 
 
 ## IDEACIÓN
 ### Muestra de pruebas y resultados de lluvia de ideas para definir
 
 Primer prototipo:
-![alt text](assets/images/prototipo.jpg)
+![Primer prototipo](assets/images/prototipo.jpg)
 
 Segundo prototipo:
-![alt text](assets/images/prototipo2.jpg)
+![Segundo prototipo](assets/images/prototipo2.jpg)
 
 ## SKETCHING & PROTOTYPING  
 
@@ -68,5 +69,10 @@ Segundo prototipo:
 ![Persona](./assets/images/Persona.PNG)
   
 ### Historia del usuario
+![Lluvia de ideas 02](assets/images/storyboard-datadashboard.png)
 
 ### Sketch de flujo de aplicación
+
+
+
+[Link](https://marvelapp.com/57bc2hj) a sketch/prototipo final.
