@@ -55,7 +55,7 @@ Lluvia de ideas:
 
 
 ## IDEACIÓN
-### Muestra de pruebas y resultados de lluvia de ideas para definir
+### Muestra de pruebas y resultados de lluvia de ideas para definir la solución
 
 Primer prototipo:
 ![Primer prototipo](assets/images/prototipo.jpg)
@@ -73,6 +73,9 @@ Segundo prototipo:
 
 ### Sketch de flujo de aplicación
 
+[Link a sketch/prototipo final](https://marvelapp.com/57bc2hj) 
 
+Preview Sketch:
 
-[Link](https://marvelapp.com/57bc2hj) a sketch/prototipo final.
+![Preview Sketch](assets/images/preview-sketch.png)
+
