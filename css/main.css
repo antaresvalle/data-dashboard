@@ -1,3 +1,49 @@
-/*
- * Estilos de tu proyecto
- */
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+header {
+	background-color: #f7f7f7;
+	height: 5em;
+	position: relative;
+}
+
+aside {
+	border-right: 2px #dedede solid;
+	width: 15%;
+	height: 800px;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	padding-left: 2em; 
+}
+
+nav {
+	display: inline-block;
+	width: 30%;
+	left: 5%;
+	position: relative;
+}
+
+div#logo {
+	display: inline-block;
+}
+
+img {
+	text-align: center;
+	width: 30%;
+}
+
+a {
+	text-decoration: none;
+	color: gray;
+	font-size: 1.2em;
+	position: relative;
+	height: auto;
+	margin-right: 1.7em;
+}
+
+input[type="radio"]{
+	display: block;
+}
