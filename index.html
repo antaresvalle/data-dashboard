@@ -3,10 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Data Dashboard</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href=“https://fonts.googleapis.com/css?family=Roboto:300,400,500,700” rel=“stylesheet”>
   </head>
   <body>
     <main id="main-container">
-      <img src="assets/images/Laboratoria_isotipo_RGB-02.png">
+      <center>
+        <img class="logo-inicio" src="assets/images/Laboratoria_isotipo_RGB-02.png">
+        <h2>¡Bienvenid@s!</h2>
+        <h1>Selecciona la sede de tu interés</h1>
+          <select class="sede" name="Sede">
+            <option disabled selected value> Sede </option>
+            <option value="arequipa">Arequipa</option>
+            <option value="cdmx">Ciudad de México</option>
+            <option value="lima">Lima</option>
+            <option value="santiago">Santiago de Chile</option>
+            <br>
+            <input type="submit" class="entrar" value="Entrar">
+          </select>
+        </center>
     </main>
 		<!-- Base de datos -->
 		<script src="./js/data.js"></script>
