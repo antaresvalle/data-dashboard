@@ -56,14 +56,13 @@ aside {
 	position: absolute;
 	display: inline-block;
 	box-sizing: border-box;
-	padding-left: 2em;
+	padding-left: 3em;
 }
 
 nav {
 	display: inline-block;
-	width: 24%;
+	width: 65%;
 	position: relative;
-	padding-left: 5em;
 }
 
 nav div {
@@ -77,6 +76,10 @@ nav div:hover{
 	border-bottom: 5px solid #ffe521;
 }
 
+.activo {
+	background-color: #ececec;
+	border-bottom: 5px solid #ffe521;
+}
 
 input[type='radio']:after {
     width: 15px;
@@ -109,12 +112,12 @@ input[type='radio']:checked:after {
 div#logo {
 	display: inline-block;
 	padding-top: 0.3em;
-	margin-right: 13em;
 	text-align: center;
+	width: 15%;
 }
 
 img {
-	width: 30%;
+	width: 75%;
 }
 
 a {
@@ -136,7 +139,7 @@ select.sede-overview {
 
 
 p {
-    width: 80%;
+    width: 70%;
     display: inline-block;
     margin: 0.5em;
     margin-left: 1em;
@@ -145,7 +148,7 @@ p {
 /*  ---------------- MAIN ---------------- */
 main {
 	display: inline-block;
-	width: 75%;
+	width: 80%;
 	position: relative;
 	left: 16%;
 }
