@@ -1,3 +1,15 @@
+
+// Boton entrar
+
+var entrar = document.getElementById('btn-entrar');
+console.log(entrar);
+
+entrar.addEventListener('click', function(){
+	window.location.href='overview.html';
+});
+
+
+
 // Puedes hacer uso de la base de datos a través de la variable `data`
 console.log(data);
 
