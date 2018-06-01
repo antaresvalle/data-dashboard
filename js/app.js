@@ -31,8 +31,18 @@ for (var i in aqp){
 				inactive += 1
 			}
 //Muestra la suma total de las estudiantes activas e inactivas
-			console.log(active)
-			console.log(inactive)
+			
 		});
+		
 	}
+	console.log(active)
+	console.log(inactive)
 }
+// Boton entrar
+
+var entrar = document.getElementById('btn-entrar');
+console.log(entrar);
+
+entrar.addEventListener('click', function(){
+	window.location.href='overview.html';
+});
