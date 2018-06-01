@@ -56,12 +56,12 @@ aside {
 	position: absolute;
 	display: inline-block;
 	box-sizing: border-box;
-	padding-left: 2em;
+	padding-left: 3em;
 }
 
 nav {
 	display: inline-block;
-	width: 24%;
+	width: 65%;
 	position: relative;
 	padding-left: 5em;
 }
@@ -106,16 +106,59 @@ input[type='radio']:checked:after {
     border: 2px solid white;
 }
 
+nav div {
+	display: inline-block;
+	padding: 1.6em;
+	cursor: pointer;
+}
+
+nav div:hover{
+	background-color: #ececec;
+	border-bottom: 5px solid #ffe521;
+}
+
+.activo {
+	background-color: #ececec;
+	border-bottom: 5px solid #ffe521;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
 div#logo {
 	display: inline-block;
 	padding-top: 0.3em;
-	margin-right: 13em;
 	text-align: center;
+	width: 15%;
 }
 
 img {
-	
-	width: 30%;
+	width: 75%;
 }
 
 a {
@@ -136,7 +179,7 @@ select.sede-overview {
 
 
 p {
-    width: 80%;
+    width: 70%;
     display: inline-block;
     margin: 0.5em;
     margin-left: 1em;
@@ -145,7 +188,7 @@ p {
 /*  ---------------- MAIN ---------------- */
 main {
 	display: inline-block;
-	width: 75%;
+	width: 80%;
 	position: relative;
 	left: 16%;
 }
@@ -161,5 +204,4 @@ main section div > div{
 	border-bottom: solid 1px #d8d8d8;
 	box-sizing: border-box;
 	padding: 2em;
->>>>>>> upstream/master
 }
