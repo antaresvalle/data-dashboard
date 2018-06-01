@@ -44,3 +44,13 @@ console.log(activo);
 console.log(newArray);
 // console.log(generaciones[properties[1]);
 
+
+
+// ----------------------- PUNTUACION PROMEDIO DE PROFESORES -----------------------
+
+function teachers(sede, generacion){
+	
+}
+
+
+

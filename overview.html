@@ -9,20 +9,47 @@
 <body>
 	<header>
 		<nav>
-			<a href="#">overview</a>
-			<a href="#">estudiantes</a>
+			<div><a href="overview.html">overview</a></div>
+			<div><a href="students.html">estudiantes</a></div>
 		</nav>
 		<div id="logo"><img src="assets/images/Laboratoria_Logo_RGB_01.png"></div>
+		<select class="sede-overview" name="Sede">
+	       <option disabled selected value> sede </option>
+	       <option value="arequipa">Arequipa</option>
+	       <option value="cdmx">Ciudad de México</option>
+	       <option value="lima">Lima</option>
+	       <option value="santiago">Santiago de Chile</option>
+	     </select>
 	</header>
 	<aside>
-		<h3>Generacion</h3>
-		<input type="radio">
-		<input type="radio">
+		<h2>Generación</h2>
+		<input type="radio" name="generacion"><p>(generacion)</p>
+		<input type="radio" name="generacion"><p>(generacion)</p>
 	</aside>
 	<main>
-		<section></section>
-		<section></section>
-		<section></section>
+		<section>
+			<div id="status-estudiantes">
+				<div id="activas">
+					<h2>Estudiantes Activas/Inactivas</h2>
+				</div>
+				<div id="inactivas">
+					<h2>Estudiantes que Superan la meta</h2>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="meta-esp">
+				<div id="tech">
+					<h2>Tech</h2>
+				</div>
+				<div id="hse">
+					<h2>HSE</h2>
+				</div>
+			</div>
+		</section>
+		<section>
+			
+		</section>
 	</main>
 </body>
 </html>

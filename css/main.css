@@ -3,35 +3,88 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* INICIO */
+
+
+
+/**/
+
 header {
 	background-color: #f7f7f7;
 	height: 5em;
 	position: relative;
+	display: inline-flex;
+	width: 100%;
 }
 
 aside {
 	border-right: 2px #dedede solid;
 	width: 15%;
 	height: 800px;
-	position: relative;
-	display: block;
+	position: absolute;
+	display: inline-block;
 	box-sizing: border-box;
 	padding-left: 2em; 
 }
 
 nav {
 	display: inline-block;
-	width: 30%;
-	left: 5%;
+	width: 24%;
 	position: relative;
+	padding-left: 5em;
+	/*text-transform: uppercase;*/
+}
+
+nav div {
+	display: inline-block;
+	padding: 1.6em;
+	/*margin-right: 3em;*/
+	cursor: pointer;
+}
+
+nav div:hover{
+	background-color: #ececec;
+	border-bottom: 5px solid #ffe521;
+}
+
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
 }
 
 div#logo {
 	display: inline-block;
+	padding-top: 0.3em;
+	margin-right: 13em;
+	text-align: center;
 }
 
 img {
-	text-align: center;
+	
 	width: 30%;
 }
 
@@ -41,9 +94,44 @@ a {
 	font-size: 1.2em;
 	position: relative;
 	height: auto;
-	margin-right: 1.7em;
+	
+}
+
+select.sede-overview {
+    margin: 1.4em 0;
+    width: 15%;
+    font-size: 1em;
+    height: 2em;
 }
 
 input[type="radio"]{
-	display: block;
+}
+
+p {
+    width: 80%;
+    display: inline-block;
+    margin: 0.5em;
+    margin-left: 1em;
+}
+
+/*  ---------------- MAIN ---------------- */
+main {
+	display: inline-block;
+	width: 75%;
+	position: relative;
+	left: 16%;
+
+}
+
+div#status-estudiantes {
+	width: auto;
+}
+
+main section div > div{
+	width: 49%;
+	display: inline-block;
+	border-right: solid 1px #d8d8d8;
+	border-bottom: solid 1px #d8d8d8;
+	box-sizing: border-box;
+	padding: 2em;
 }
