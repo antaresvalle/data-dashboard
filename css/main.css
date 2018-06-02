@@ -170,7 +170,12 @@ a {
 	
 }
 
+<<<<<<< HEAD
 select.sede-overview {
+=======
+
+select#sede-overview {
+>>>>>>> upstream/master
     margin: 1.4em 0;
     width: 15%;
     font-size: 1em;

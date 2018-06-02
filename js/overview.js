@@ -4,6 +4,17 @@ window.addEventListener('load', function() {
 
 })
 
+// obtener valor sede de select
+
+var sede = document.getElementById('sede-overview');
+
+sede.addEventListener('select', function(){
+	var sedeValor = sede.options[sede.selectedIndex].value;
+ var text = sede.options[sede.selectedIndex].text;
+
+console.log(text);
+
+});
 
 /*  ---------------- Obtencion de datos principales ---------------- */
 
