@@ -126,7 +126,7 @@ a {
 	font-size: 1.2em;
 	position: relative;
 	height: auto;
-	
+
 }
 
 
@@ -164,4 +164,47 @@ main section div > div{
 	border-bottom: solid 1px #d8d8d8;
 	box-sizing: border-box;
 	padding: 2em;
+}
+
+/*---------------STUDENTS-------------------*/
+
+.students {
+	display: inline-block;
+}
+
+.searchf {
+	display: inline-block;
+	padding-top: 0;
+	position: relative;
+	margin-top: 0;
+	margin-left: 59%;
+}
+
+.searchf i {
+	position: absolute;
+	left: 0;
+	top: 6px;
+	padding: 2px 5px 0;
+	color: #aaa;
+}
+
+.searchf input[type=text] {
+	padding-left: 40px;
+}
+
+input[type=text] {
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	box-sizing: border-box;
+	outline: none;
+	padding: 8px;
+	transition: .3s;
+}
+
+input[type=text]:focus {
+	color: #ffe521;
+}
+
+input[type=text]:focus + i {
+	color: #ffe521;
 }
