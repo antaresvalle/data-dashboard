@@ -1,8 +1,8 @@
-
 // Boton entrar
 
 var entrar = document.getElementById('btn-entrar');
 console.log(entrar);
+
 
 
 
@@ -26,5 +26,4 @@ var sedeValue = sede.addEventListener('change', function(){
 });
 
 });
-
 
