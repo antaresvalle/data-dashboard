@@ -95,7 +95,7 @@ city.addEventListener('change', function(){
 	console.log(sedeValor)
 	var a = document.getElementById('activas').innerHTML = '';
 	var b = document.getElementById('inactivas').innerHTML = '';
-	var c = document.getElementById('total').innerHTML = '';
+	var c = document.getElementById('global').innerHTML = '';
 	var d = document.getElementById('hse').innerHTML = '';
 	var e = document.getElementById('tech').innerHTML = '';
 	var f = document.getElementById('satisfaction').innerHTML = '';
@@ -348,7 +348,7 @@ function successfulStudents(sede){
 	console.log(active)
 	console.log(genActive);
 	
-	var contTotalGen = document.getElementById('total');
+	var contTotalGen = document.getElementById('global');
 	var contHse = document.getElementById('hse');
 	var contTech = document.getElementById('tech');
 
