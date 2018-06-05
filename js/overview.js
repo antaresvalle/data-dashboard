@@ -32,6 +32,8 @@
 		getGlobalInfo(this.dataset.sede);
 		console.log(getGlobalInfo(data[this.dataset.sede]));
 	});
+
+
 /* 
 	FUNCION: Obtener parametro en URL
 */
@@ -81,6 +83,7 @@ function showGen(sedeN) {
 				inputGen.name = 'generacion';
 				inputGen.dataset.valor = gen;
 				var nombreGen = document.createElement('p');
+				nombreGen.className ='aside-sede';
 				var content = document.createTextNode(gen);
 					
 				aside.appendChild(inputGen);
@@ -170,17 +173,42 @@ getSelectSedeValue();
 */
 
 	function getGenAsideValue() {
-		var aside = document.getElementsByClassName('in');
-		// console.log(aside); 
+		var asideInput = document.getElementsByClassName('in');
+		var asideSedeName = document.getElementsByClassName('aside-sede');
+		var asideSedeNameLength = asideSedeName.length;
+		// var genAsideText = asideSedeName.textContent;
+		console.log(asideSedeNameLength);
 
-		for(var i = 0; i < aside.length; i++) {
-			var inputElement = aside[i];
+		function getAsideName(){
+			for(var i = 0; i < asideSedeNameLength; i++){
+			var nombreSedeAside = asideSedeName[i].textContent;
+			console.log(nombreSedeAside);
+			}
+			return nombreSedeAside;
+		}
+		
+
+		 console.log(asideSedeName); 
+
+		for(var i = 0; i < asideInput.length; i++) {
+			var inputElement = asideInput[i];
 			var valorElement = inputElement.dataset.valor;
 
 			inputElement.addEventListener('click', function(evt) {
+				var a = document.getElementById('activas-var').innerHTML = '';
+				var b = document.getElementById('inactivas-var').innerHTML = '';
+			var c = document.getElementById('global').innerHTML = '';
+			var d = document.getElementById('hse').innerHTML = '';
+			var e = document.getElementById('tech').innerHTML = '';
+			// var f = document.getElementById('satisfaction-var').innerHTML = '';
+			// var g = document.getElementById('contentParent').innerHTML = '';
 				var valorInputGen = evt.target.dataset.valor;
-				console.log(valorInputGen);
-				return valorInputGen;
+				console.log(valorInputGen,sede.options[sede.selectedIndex].value);
+
+				getActiveStudentsGeneration(data[sede.options[sede.selectedIndex].value], valorInputGen);
+				// listInactiveStudentsGeneration(data[sede.options[sede.selectedIndex].value], valorInputGen);
+				successfulStudentsGeneration(data[sede.options[sede.selectedIndex].value], valorInputGen);
+				// return valorInputGen;
 			});
 			console.log(valorElement);
 			// return valorElement;
@@ -638,3 +666,153 @@ getSelectSedeValue();
     });
 
     window.addEventListener("click", windowOnClick);
+
+
+/*
+	FUNCION: ESTUDIANTES ACTIVAS por GENERACION
+*/
+
+
+//-----------Obtener la cantidad y porcentaje de las estudiantes activas por generacion------------//
+function getActiveStudentsGeneration (sede,generacion){
+	var active = 0;
+	var inactive = 0;
+// Variable para guardar el array de estudiantes por generacion
+console.log(sede);
+			var array = sede[generacion]['students'];
+
+// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
+		array.forEach(function (element,index) {
+		var inactiveList = document.getElementById('inactiveList');
+
+			if( element.active === true){
+				active += 1;
+
+			} else if (element.active === false) {
+				inactive += 1;
+			};
+		});
+
+	//Muestra el total de las estudiantes activas e inactivas
+	var contentActStudn = document.getElementById('activas');
+	var contentInacStudn = document.getElementById('inactivas');
+	var showActStudn = document.createElement('p');
+	showActStudn.className = 'cont';
+	contentActStudn.appendChild(showActStudn)
+	showActStudn.appendChild(document.createTextNode('Estudiantes activas: '+ active))
+
+	var showInacStudn = document.createElement('p');
+	showInacStudn.className = 'cont';
+	contentInacStudn.appendChild(showInacStudn)
+	showInacStudn.appendChild(document.createTextNode('Estudiantes inactivas: ' + inactive))
+
+	var totalStudents = active + inactive
+
+	var porcentajeActivas = ((active / totalStudents) * 100)
+	var genAct = document.createElement('p');
+	genAct.className = 'cont';
+	contentActStudn.appendChild(genAct);
+	genAct.appendChild(document.createTextNode('Estudiantes activas generacion '+ generacion + ': ' + porcentajeActivas.toFixed(2) + '% '));
+
+	var porcentajeInactivas = ((inactive / totalStudents) * 100)
+	var genInac = document.createElement('p');
+	genInac.className = 'cont';
+	contentInacStudn.appendChild(genInac);
+	genInac.appendChild(document.createTextNode('Estudiantes inactivas generacion '+ generacion + ': ' + porcentajeInactivas.toFixed(2) + '%'));
+};
+
+//----------Obtener la lista de estudiantes inactivas por generacion-----------------------------------------------//
+function listInactiveStudentsGeneration(sede, generacion){
+	var inactive = 0;
+// Variable para guardar el array de estudiantes por generacion
+	var array = sede[generacion]['students'];
+
+// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
+	array.forEach(function (element,index) {
+		var inactiveList = document.getElementById('inactiveList');
+			
+		if (element.active === false) {
+			inactive += 1;
+
+			var studentInactive = document.createElement("div");
+			var nameStudentInactive = document.createElement('p');
+			var photoStudentInactive = document.createElement('img');
+
+			inactiveList.appendChild(studentInactive);
+			studentInactive.appendChild(photoStudentInactive);
+			photoStudentInactive.src = element.photo;
+			studentInactive.appendChild(nameStudentInactive);
+			nameStudentInactive.appendChild(document.createTextNode(element.name));
+
+		};
+	});
+};
+
+/*  ---------------- Cantidad y porcentaje mayor que 70% x generacion ---------------- */
+function successfulStudentsGeneration(sede,generation){
+	var active = 0;
+	// Variable para guardar el array de estudiantes por generacion
+	var array = sede[generation]['students'];
+
+	var totalSuccessfulStdnt = 0;
+	var studentsHse = 0;
+	var studentsTech = 0;
+
+	// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
+	array.forEach(function (element,index) {
+
+		if( element.active === true){
+			active += 1;
+			var arraySprints = element.sprints;
+
+			var totalPoints = 0;
+			var pointsHse = 0;
+			var pointsTech = 0;
+			//Iteración para obtener el puntaje de Tech y HSE
+			arraySprints.forEach(function(element,index){
+				var pointsSprints = 0;
+
+  				pointsSprints += element.score.tech + element.score.hse;
+				totalPoints += pointsSprints;
+				pointsHse += element.score.hse;
+				pointsTech += element.score.tech;
+			});
+
+			if (totalPoints > (2100 * arraySprints.length)){
+				totalSuccessfulStdnt += 1;
+			}
+
+			if (pointsHse > (840 * arraySprints.length)){
+				studentsHse += 1;
+			}
+			if (pointsTech > (1260 * arraySprints.length )){
+				studentsTech += 1;
+			}
+		};
+	});
+
+	var contTotalGen = document.getElementById('global');
+	var contHse = document.getElementById('hse');
+	var contTech = document.getElementById('tech');
+
+	var porcentajeTotal = (totalSuccessfulStdnt / active) * 100;
+	var porcentajeHse = (studentsHse / active) * 100;
+	var porcentajeTech = (studentsTech / active) * 100;
+
+	var totalGen = document.createElement('p');
+	totalGen.className = 'cont';
+	var totalHse = document.createElement ('p');
+	totalHse.className = 'cont';
+	var totalTech = document.createElement ('p');
+	totalTech.className = 'cont';
+
+	contTotalGen.appendChild(totalGen);
+	totalGen.appendChild(document.createTextNode('generacion '+ generation + ': ' + porcentajeTotal.toFixed(2) + '%'));
+
+	contHse.appendChild(totalHse);
+	totalHse.appendChild(document.createTextNode('hse '+ generation + ': ' + porcentajeHse.toFixed(2) + '%'));
+
+	contTech.appendChild(totalTech);
+	totalTech.appendChild(document.createTextNode('Tech '+ generation + ': ' + porcentajeTech.toFixed(2) + '%'));
+
+};

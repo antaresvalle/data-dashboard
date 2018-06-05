@@ -251,6 +251,12 @@ main section div > div#jedis-var{
 	padding: 2em;
 }
 
+.btnInac {
+	margin-top: 3em;
+    margin-left: 2em;
+}
+
+
 /*---------------MODAL-------------------*/
 
 .modal {
