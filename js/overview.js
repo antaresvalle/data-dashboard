@@ -255,7 +255,7 @@ getSelectSedeValue();
 
 			genAct.className = 'cont';
 			contentActStudn.appendChild(genAct);
-			genAct.appendChild(document.createTextNode('generacion '+ (index + 1) + ': ' + porcentaje.toFixed(2) + '%'));
+			genAct.appendChild(document.createTextNode('generación '+ (index + 1) + ': ' + porcentaje.toFixed(2) + '%'));
 			ultimoElement += element;
 		});
 
@@ -266,7 +266,7 @@ getSelectSedeValue();
 			var genAct = document.createElement('p');
 			genAct.className = 'cont';
 			contentInacStudn.appendChild(genAct);
-			genAct.appendChild(document.createTextNode('generacion '+ (index + 1) + ': ' + porcentaje.toFixed(2) + '%'));
+			genAct.appendChild(document.createTextNode('generación '+ (index + 1) + ': ' + porcentaje.toFixed(2) + '%'));
 			ultimoElement += element;
 		});
 
@@ -408,10 +408,10 @@ getSelectSedeValue();
 			totalTech.className = 'cont';
 
 			contTotalGen.appendChild(totalGen);
-			totalGen.appendChild(document.createTextNode('generacion '+ (index + 1) + ': ' + porcentajeTotal.toFixed(2) + '%'));
+			totalGen.appendChild(document.createTextNode('Generación '+ (index + 1) + ': ' + porcentajeTotal.toFixed(2) + '%'));
 
 			contHse.appendChild(totalHse);
-			totalHse.appendChild(document.createTextNode('hse gen'+ (index + 1) + ': ' + porcentajeHse.toFixed(2) + '%'));
+			totalHse.appendChild(document.createTextNode('HSE gen'+ (index + 1) + ': ' + porcentajeHse.toFixed(2) + '%'));
 
 			contTech.appendChild(totalTech);
 			totalTech.appendChild(document.createTextNode('Tech gen'+ (index + 1) + ': ' + porcentajeTech.toFixed(2) + '%'));
