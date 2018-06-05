@@ -351,6 +351,7 @@ input[type=text]:focus + i {
 	color: #ffe521;
 }
 
+
 a#btnInactive {
 	text-decoration: underline;
 	cursor: pointer;
@@ -359,4 +360,70 @@ a#btnInactive {
 
 main section div > div p.cont {
 	font-size: 2em;
+}
+
+.infostd{
+	border: 1px solid #aaa;
+	margin: 10px;
+}
+.uno {
+	display: block;
+	padding: 0%;
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+}
+
+.data img{
+	height: 100px;
+	width: 80px;
+	text-align: center;
+}
+
+.data {
+	border: none;
+	display: inline-block;
+	font-size: 1em;
+	padding: 20px;
+	text-align: center;
+	width: 30%;
+}
+
+.data .totalsprint {
+	font-size: 2em;
+	font-weight: 500;
+	margin: 0;
+	position: relative;
+	right: 0%;
+	text-align: right;
+	width: 100%;
+	
+}
+
+.data p {
+	display: block;
+	font-size: 1em;
+	margin: 0;
+	padding: 10px;
+	text-align: right;
+	width: fit-content;
+}
+
+.data h4{
+	text-align: right;
+}
+
+.sprint {
+	border: none;
+	padding: 10px;
+	width: 23%;
+	display: inline-block;
+}
+
+.std {
+	display: block;
+	text-align: center;
+}
+
+.sprint h5 {
+	margin: 0;
 }
