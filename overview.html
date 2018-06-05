@@ -5,6 +5,7 @@
 	<title>Overview</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 	<header>
@@ -13,7 +14,7 @@
 			<a href="overview.html"><div id="activo">overview</div></a>
 			<a href="students.html" id="estudiantes"><div>estudiantes</div></a>
 		</nav>
-		
+
 		<select id="sede-overview" name="Sede">
 	       <option disabled selected value> sede </option>
 	       <option value="AQP">Arequipa</option>
@@ -65,6 +66,10 @@
 			</div>
 		<section id=inactiveList>
 		</section>
+		<section>
+			<div id="top_x_div" style="width: 900px; height: 500px;"></div>
+			</div>
+		</section>
 	</main>
 
 	<!-- Base de datos -->
@@ -72,5 +77,7 @@
 		<!-- Aquí va tus archivos JS -->
 	<script src="./js/app.js"></script>
     <script src="./js/overview.js"></script>
+		<!--Gráficas-->
+		<script src="./js/charts.js"></script>
 </body>
 </html>

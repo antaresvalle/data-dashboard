@@ -15,8 +15,8 @@ var splitSede = getSede.split("&");
 var pair = splitSede[0].split("=");
 var sedeValue = pair[1];
 // console.log(sedeValue);
-getTeacher(sedeValue);	   
-getJedi(sedeValue);    
+getTeacher(sedeValue);
+getJedi(sedeValue);
 
 // --------------- cambiar valor de select al mismo valor de parametro en url -----------
 
@@ -52,18 +52,18 @@ function showGen(sedeN){
 				inputGen.dataset.valor = gen;
 				var nombreGen = document.createElement('p');
 				var content = document.createTextNode(gen);
-				
+
 				aside.appendChild(inputGen);
 				nombreGen.appendChild(content);
 				aside.appendChild(nombreGen );
 			};
 		}
-			
-			
+
+
 		};
 
 		getGenAsideValue();
-				
+
 }
 
 // ---------------- obtener valor sede de select --------------------------------------
@@ -79,9 +79,9 @@ sede.addEventListener('change', function(){
 	document.getElementById('teachers-var').innerHTML = '';
 	document.getElementById('jedis-var').innerHTML = '';
 	showGen(sedeValor);
-	getTeacher(sedeValor);	
+	getTeacher(sedeValor);
 	getJedi(sedeValor);
-	
+
 	// obtener y desplegar datos de generacion
 	function getGen(sede){
 		 //console.log(data[sede]);
@@ -110,7 +110,7 @@ city.addEventListener('change', function(){
 function getGenAsideValue(){
 	var aside = document.getElementsByClassName('in');
 
-// console.log(aside); 
+// console.log(aside);
 
 	for(var i = 0; i < aside.length; i++){
 		var inputElement = aside[i];
@@ -162,21 +162,21 @@ function activeStudents(sede){
 
 	// Variable para guardar el array de estudiantes por generacion
 			var array = sede[i]['students'];
-		
+
 	// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
 		array.forEach(function (element,index) {
 		var inactiveList = document.getElementById('inactiveList');
 
 			if( element.active === true){
 				active += 1;
-			
+
 			} else if (element.active === false) {
 				inactive += 1;
 			};
-				
+
 		});//array
 		genActive.push(active);
-		genInactive.push(inactive);			
+		genInactive.push(inactive);
 	};
 
 	//Muestra la suma total de las estudiantes activas e inactivas
@@ -211,12 +211,13 @@ function activeStudents(sede){
 		genAct.appendChild(document.createTextNode('Estudiantes inactivas generacion '+ (index + 1) + ': ' + porcentaje.toFixed(2)))
 		ultimoElement += element
 	});
+
 	console.log(ultimoElement);
-	
+
 	console.log(genInactive);
 
 	//console.log(listActive);
-	
+
 };
 
 /*  ---------------- % de estudiantes no activas x sede y x generacion ---------------- */
@@ -235,18 +236,18 @@ function listInactiveStudents(sede){
 
 	// Variable para guardar el array de estudiantes por generacion
 			var array = sede[i]['students'];
-		
+
 	// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
 		array.forEach(function (element,index) {
 		var inactiveList = document.getElementById('inactiveList');
 
 			if (element.active === false) {
 				inactive += 1;
-		
+
 				var studentInactive = document.createElement("div");
 				var nameStudentInactive = document.createElement('p');
 				var photoStudentInactive = document.createElement('img');
-				
+
 				inactiveList.appendChild(studentInactive);
 				studentInactive.appendChild(photoStudentInactive);
 				photoStudentInactive.src = element.photo;
@@ -254,11 +255,11 @@ function listInactiveStudents(sede){
 				nameStudentInactive.appendChild(document.createTextNode(element.name));
 
 			};
-				
+
 		});//array
-				
+
 	};
-	
+
 };
 
 /*  ---------------- % de estudiantes no activas x sede y x generacion ---------------- */
@@ -276,12 +277,12 @@ function successfulStudents(sede){
 
 	for (var i in sede){
 		console.log(sede[i]);
-		
+
 
 // Variable para guardar el array de estudiantes por generacion
 		var array = sede[i]['students'];
 
-		
+
 		var totalSuccessfulStdnt = 0;
 		var studentsHse = 0;
 		var studentsTech = 0;
@@ -293,15 +294,15 @@ function successfulStudents(sede){
 				active += 1;
 				var arraySprints = element.sprints;
 				console.log(arraySprints);
-				
-				
+
+
 				var totalPoints = 0;
 				var pointsHse = 0;
 				var pointsTech = 0;
-			
+
 				arraySprints.forEach(function(element,index){
 					var pointsSprints = 0;
-				
+
 					//console.log(element.score)
 					//console.log(element.score.tech)
 					//console.log(element.score.hse)
@@ -309,14 +310,14 @@ function successfulStudents(sede){
 					totalPoints += pointsSprints;
 					pointsHse += element.score.hse;
 					pointsTech += element.score.tech;
-							
-					
+
+
 				});
 
 				console.log('total ' + totalPoints);
 				console.log('HSE ' + pointsHse);
 				console.log('Tech ' + pointsTech);
-			
+
 				if (totalPoints > (2100 * arraySprints.length)){
 					totalSuccessfulStdnt += 1;
 				}
@@ -327,7 +328,7 @@ function successfulStudents(sede){
 
 				if (pointsTech > (1260 * arraySprints.length )){
 					studentsTech += 1;
-				}		
+				}
 			};
 		});
 
@@ -347,19 +348,23 @@ function successfulStudents(sede){
 	console.log(arrayGeneracionTotal);
 	console.log(active)
 	console.log(genActive);
-	
+
 	var contTotalGen = document.getElementById('total');
 	var contHse = document.getElementById('hse');
 	var contTech = document.getElementById('tech');
 
 	var ultimoElement = 0;
+
+	var almacenaPromedioTotalGeneracion = [];
+	var almacenaPromedioTotalHse = [];
+	var almacenaPromedioTotalTech = [];
+
 	genActive.forEach(function(element,index){
 		element = element - ultimoElement
 		console.log (arrayGeneracionTotal[index])
 		var porcentajeTotal = ((arrayGeneracionTotal[index]) / element) * 100;
 		var porcentajeHse = ((arrayGeneracionHse[index]) / element) * 100;
 		var porcentajeTech = ((arrayGeneracionTech[index]) / element) * 100;
-
 
 		var totalGen = document.createElement('p');
 		var totalHse = document.createElement ('p');
@@ -375,10 +380,18 @@ function successfulStudents(sede){
 		totalTech.appendChild(document.createTextNode('Tech '+ (index + 1) + ': ' + porcentajeTech.toFixed(2) + '%'));
 
 		ultimoElement += element
+		almacenaPromedioTotalGeneracion.push(porcentajeTotal.toFixed(2));
+		almacenaPromedioTotalHse.push(porcentajeHse.toFixed(2));
+		almacenaPromedioTotalTech.push(porcentajeTech.toFixed(2));
+
+
 	});
-
-
+	console.log(almacenaPromedioTotalGeneracion);
+	console.log(almacenaPromedioTotalTech);
+	console.log(almacenaPromedioTotalHse);
 };
+
+
 	/*  ---------------- cantidad y porcentaje mayor a 70% : TECH ---------------- */
 
 
@@ -388,26 +401,26 @@ function successfulStudents(sede){
 /*  ---------------- Porcentaje estudiantes satisfechas ---------------- */
 
 function satisfaction(sede){
-	
+
 	// Iteracion para ingresar a los datos por generacion
 	for (var i in sede){
 
 	// Variable para guardar el array de estudiantes por generacion
 			var array = sede[i]['ratings'];
 			console.log(array)
-		
+
 	// Iteracion para entrar a la informacion de cada estudiante y obtener el valor de active.
 		var suma = 0;
 		array.forEach(function (element,index) {
 			suma += element.student.cumple + element.student.supera;
-				
+
 		});//array
-			
+
 		console.log(suma)
 		var porcentaje = (suma / array.length);
 		var contenedor = document.getElementById('satisfaction');
 		var satisfaction = document.createElement('p');
-		
+
 		contenedor.appendChild(satisfaction);
 		satisfaction.appendChild(document.createTextNode(porcentaje.toFixed(2)));
 
@@ -417,9 +430,9 @@ function satisfaction(sede){
 /*  ---------------- Puntuacion promedio de PROFESORES ---------------- */
 
 
-// Por sede 
+// Por sede
 function getTeacher(sede){
-	
+
 
 	var promedioTotal = 0;
 	var promedioParcial = 0;
@@ -430,10 +443,10 @@ function getTeacher(sede){
 	var sedeGuardada = data[sede];
 	console.log(sedeGuardada);
 	var seriePromedios = [];
-	
+
 
 	for(var gen in sedeGuardada){
-		
+
 		promedioTotal = 0;
 		var array = sedeGuardada[gen].ratings;
 		var arrayLength = array.length;
@@ -443,9 +456,9 @@ function getTeacher(sede){
 			var teacher = element.teacher;
 			// console.log(typeof teacher);
 			seriePromedios.push(teacher);
-			
+
 		});
-		
+
 		ratingGenAnt += arrayLength;
 		// console.log('ratingGenAnt '+ratingGenAnt);
 	}
@@ -455,14 +468,14 @@ function getTeacher(sede){
 		// console.log('PROMEDIO: ' + seriePromedios[i]);
 		aux += seriePromedios[i];
 
-		
+
 	};
 	var sumaFinal = sumaTeachers += aux / ratingGenAnt;
 	// console.log('aux: ' +aux);
 
-	
+
 	// console.log('suma total: '+sumaTeachers);
-	
+
 	var teachersId = document.getElementById('teachers-var');
 
 	var puntaje = document.createElement('p');
@@ -475,7 +488,7 @@ function getTeacher(sede){
 // por generacion
 
 function getTeacherGen(){
-	
+
 
 }
 
@@ -484,7 +497,7 @@ function getTeacherGen(){
 
 // por sede
 function getJedi(sede){
-	
+
 	var promedioTotal = 0;
 	var promedioParcial = 0;
 	var sumaJedis = 0;
@@ -494,10 +507,10 @@ function getJedi(sede){
 	var sedeGuardada = data[sede];
 	console.log(sedeGuardada);
 	var seriePromedios = [];
-	
+
 
 	for(var gen in sedeGuardada){
-		
+
 		promedioTotal = 0;
 		var array = sedeGuardada[gen].ratings;
 		var arrayLength = array.length;
@@ -507,9 +520,9 @@ function getJedi(sede){
 			var jedi = element.jedi;
 			// console.log(typeof jedi);
 			seriePromedios.push(jedi);
-			
+
 		});
-		
+
 		ratingGenAnt += arrayLength;
 		// console.log('ratingGenAnt jedis '+ratingGenAnt);
 	}
@@ -526,7 +539,7 @@ function getJedi(sede){
 
 	// sumaTeachers += sumaTeachers;
 	// console.log('suma total: '+sumaJedis);
-	
+
 	var jedisId = document.getElementById('jedis-var');
 
 	var puntaje = document.createElement('p');
@@ -535,4 +548,3 @@ function getJedi(sede){
 	puntaje.appendChild(puntajeText);
 	jedisId.appendChild(puntaje);
 }
-
