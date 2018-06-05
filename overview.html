@@ -24,44 +24,61 @@
 	</header>
 	<aside id="generaciones-fijo">
 		<h2>Generación</h2>
-		<input class="in" type="radio" name="generacion" data-valor="Global">
+		<input checked class="in" type="radio" name="generacion" data-valor="Global">
 		<p id="total"> Global</p>
 		<div id="generaciones-var"></div>
 	</aside>
-	<main>
+	<main id="main">
 		<section>
 			<div id="status-estudiantes">
-				<div id="activas">
-					<h2>Estudiantes Activas/Inactivas</h2>
+				
+				<div id="activas" class="two-col">
+					<h2>Estudiantes Activas</h2>
+					<div id="activas-var"></div>
 				</div>
-				<div id="inactivas">
-					<h2>Estudiantes que Superan la meta</h2>
+				
+				<div id="inactivas" class="two-col">
+					<h2>Estudiantes Inactivas</h2>
+					<div id="inactivas-var"></div>
+					<div><a id="btnInactive"><strong>Ver lista de estudiantes inactivas</strong></a></div>
+					<div class="modal">
+				        <div class="modal-content">
+				            <span class="close-button">&times;</span>
+				            <h1>Estudiantes Inactivas</h1>
+				            <div id="contentParent"></div>
+				        </div>
+				    </div>
 				</div>
 			</div>
 		</section>
 		<section>
 			<div id="meta-esp">
-				<div id='global'></div>
-				<div id="tech">
-					<h2>Tech</h2>
+				<h2>Estudiantes que Superan la meta</h2>
+				<div id="global" class="three-col">
+					<h2>Global</h2>
 				</div>
-				<div id="hse">
+				<div id="tech" class="three-col">
+					<h2>Tech</h2>
+					<!-- <div id="tech-var" class="three-col"></div>	 -->
+				</div>
+				<div id="hse" class="three-col">
 					<h2>HSE</h2>
 				</div>
-				<div id='satisfaction'></div>
-			</div>
+				</div>
+			<!-- </div> -->
 		</section>
 		<section id="third-section">
-			<div id="superan">
+			<div id='satisfaction'>
 				<h2>Estudiantse satisfechas</h2>
+				<div id="satisfaction-var" class="three-col"></div>
 			</div>
 			<div id="teachers">
 				<h2>Puntuación promedio profesor@s</h2>
-				<div id="teachers-var"></div>
+				<div id="teachers-var" class="three-col"></div>
 			</div>
-			<div id="jedis">
+			<div id="jedis" class="three-col">
 				<h2>Puntuación promedio jedis</h2>
-				<div id="jedis-var"></div>
+				<div id="jedis-var" class="three-col"></div>
 			</div>
 		<section id=inactiveList>
 		</section>
