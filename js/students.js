@@ -120,3 +120,4 @@ function studentsList(sede){
 		});		
 	};
 };
+studentsList(data[sedeValue]);
