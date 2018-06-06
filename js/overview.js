@@ -27,11 +27,12 @@
 
 	// Elemento Input Global
 	var asideGlobal = document.getElementsByClassName('in')[0];
-	asideGlobal.addEventListener('click', function(evt) {
-		getGlobalInfo(data[this.dataset.sede]);
-		getGlobalInfo(this.dataset.sede);
-		console.log(getGlobalInfo(data[this.dataset.sede]));
-	});
+	// asideGlobal.addEventListener('click', function(evt) {
+	// 	// getGlobalInfo(data[this.dataset.sede]);
+	// 	getGlobalInfo(this.dataset.sede);
+	// 	evt.stopPropagation();
+	// 	console.log(getGlobalInfo(data[this.dataset.sede]));
+	// });
 
 
 /* 
@@ -44,7 +45,7 @@
 	// console.log(sedeValue);
 	getTeacher(sedeValue);	   
 	getJedi(sedeValue);  
-	getTeacherGen(sedeValue);  
+	// getTeacherGen(sedeValue);  
 
 	activeStudents(data[sedeValue]);
 	successfulStudents(data[sedeValue]);
@@ -105,11 +106,12 @@ getSelectSedeValue();
 
 	function getGlobalInfo(sede){
 			// var main = document.getElementById('main').innerHTML = '';
+			
 			getTeacher(sede);	
 			getJedi(sede);
-			activeStudents(sede);
-			successfulStudents(sede);
-			satisfaction(sede);
+			activeStudents(data[sede]);
+			successfulStudents(data[sede]);
+			satisfaction(data[sede]);
 		
 	}
 
@@ -135,7 +137,9 @@ getSelectSedeValue();
 			showGen(sedeValor);
 			getTeacher(sedeValor);	
 			getJedi(sedeValor);
-			getTeacherGen(sedeValor);
+			// getTeacherGen(sedeValor);
+			console.log('-------llego hasta aqui');
+			// getGlobalInfo(this.dataset.sede);
 
 
 			btnEstudiantesInactivas.dataset.custom = sedeValor;
@@ -190,7 +194,7 @@ getSelectSedeValue();
 
 		 console.log(asideSedeName); 
 
-		for(var i = 0; i < asideInput.length; i++) {
+		for(var i = 1; i < asideInput.length; i++) {
 			var inputElement = asideInput[i];
 			var valorElement = inputElement.dataset.valor;
 
@@ -200,6 +204,8 @@ getSelectSedeValue();
 			var c = document.getElementById('global').innerHTML = '';
 			var d = document.getElementById('hse').innerHTML = '';
 			var e = document.getElementById('tech').innerHTML = '';
+			var grafica = document.getElementById('top_x_div');
+			grafica.style.display = 'none';
 			// var f = document.getElementById('satisfaction-var').innerHTML = '';
 			// var g = document.getElementById('contentParent').innerHTML = '';
 				var valorInputGen = evt.target.dataset.valor;
@@ -265,12 +271,12 @@ getSelectSedeValue();
 		var showActStudn = document.createElement('p');
 		// showActStudn.className = 'cont';
 		contentActStudn.appendChild(showActStudn);
-		showActStudn.appendChild(document.createTextNode('sede: '+ active));
+		showActStudn.appendChild(document.createTextNode(active));
 
 		var showInacStudn = document.createElement('p');
 		// showInacStudn.className = 'cont';
 		contentInacStudn.appendChild(showInacStudn);
-		showInacStudn.appendChild(document.createTextNode('sede: ' + inactive));
+		showInacStudn.appendChild(document.createTextNode(inactive));
 
 		var totalStudents = active + inactive;
 		var ultimoElement = 0;
@@ -301,6 +307,34 @@ getSelectSedeValue();
 		// console.log(ultimoElement);	
 		// console.log(genInactive);
 		//console.log(listActive);	
+
+		/*-----------------Gráficas-------------------*/
+		google.charts.load('current', {'packages':['bar']});
+		     google.charts.setOnLoadCallback(drawStuff);
+		     function drawStuff() {
+		       var data = new google.visualization.arrayToDataTable([
+		         ['Estudiantes', 'Porcentaje'],
+		         ["Activas", active,],
+		         ["Inactivas", inactive,],
+		       ]);
+		       var options = {
+		         title: 'Estudiantes',
+		         width: 500,
+		         legend: { position: 'none' },
+		         chart: { title: 'Estudiantes',
+		                  subtitle: 'porcentaje de activas e inactivas' },
+		         bars: 'horizontal', // Required for Material Bar Charts.
+		         axes: {
+		           x: {
+		             0: { side: 'top', label: 'Porcentaje'} // Top x-axis.
+		           }
+		         },
+		         bar: { groupWidth: "60%" }
+		       };
+		       var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+		       chart.draw(data, options);
+		     };
+		/*Termina Gráfica*/
 	};
 
 /*  
@@ -491,6 +525,7 @@ getSelectSedeValue();
 
 	// Por sede 
 	function getTeacher(sede) {
+		// debugger
 		var promedioTotal = 0;
 		var promedioParcial = 0;
 		var sumaTeachers = 0;
@@ -694,8 +729,8 @@ console.log(sede);
 		});
 
 	//Muestra el total de las estudiantes activas e inactivas
-	var contentActStudn = document.getElementById('activas');
-	var contentInacStudn = document.getElementById('inactivas');
+	var contentActStudn = document.getElementById('activas-var');
+	var contentInacStudn = document.getElementById('inactivas-var');
 	var showActStudn = document.createElement('p');
 	showActStudn.className = 'cont';
 	contentActStudn.appendChild(showActStudn)
