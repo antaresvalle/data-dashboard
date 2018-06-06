@@ -45,19 +45,22 @@ option {
 header {
 	background-color: #f7f7f7;
 	height: 5em;
-	position: relative;
+	position: fixed;
 	display: inline-flex;
 	width: 100%;
+	z-index: 100;
+	
 }
 
 aside {
 	border-right: 2px #dedede solid;
 	width: 15%;
 	height: 1200px;
-	position: absolute;
+	position: fixed;
 	display: inline-block;
 	box-sizing: border-box;
 	padding-left: 3em;
+	top: 6.5em;
 }
 
 nav {
@@ -184,7 +187,8 @@ p {
     width: 71%;
     display: inline-block;
     margin: 0.5em;
-    margin-left: 1em;
+	margin-left: 1em;
+	text-align: center;
 }
 
 /*  ---------------- MAIN ---------------- */
@@ -194,6 +198,12 @@ main {
 	position: relative;
 	left: 16%;
 	margin-top: 2%;
+	top: 3em;
+
+}
+
+#main h2{
+	border-bottom: 1px solid grey;
 }
 
 
@@ -205,8 +215,6 @@ div#status-estudiantes {
 main section div.two-col {
 	width: 100%;
 	display: inline-block;
-	border-right: solid 1px #d8d8d8;
-	border-bottom: solid 1px #d8d8d8;
 	box-sizing: border-box;
 	padding: 2em;
 }
@@ -214,17 +222,17 @@ main section div.two-col {
 div.three-col {
 	width: 33%;
 	display: inline-block;
-	border-right: solid 1px #d8d8d8;
-	border-bottom: solid 1px #d8d8d8;
 	box-sizing: border-box;
-	padding: 2em;
+	
+}
+
+#tech, #hse{
+	border-left: 2px solid gainsboro;
 }
  
 main section#third-section div{
 	width: 33%;
 	display: inline-block;
-	border-right: solid 1px #d8d8d8;
-	border-bottom: solid 1px #d8d8d8;
 	box-sizing: border-box;
 	padding: 2em;
 }
@@ -242,6 +250,17 @@ main section div > div p{
 	font-size: 5em;
 }
 
+.cont1 {
+	text-decoration-line: underline;
+	text-decoration-color: #ffa500;
+}
+
+#activas-var .cont, #inactivas-var .cont{
+	left: 10%;
+	position: relative;
+	text-decoration-line: none;
+}
+
 main section div > div#jedis-var{
 	width: 49%;
 	display: inline-block;
@@ -253,7 +272,8 @@ main section div > div#jedis-var{
 
 .btnInac {
 	margin-top: 3em;
-    margin-left: 2em;
+	margin-left: 2em;
+	text-align: left;
 }
 
 
@@ -270,7 +290,7 @@ main section div > div#jedis-var{
         visibility: hidden;
         transform: scale(1.1);
         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-        z-index: 1;
+        z-index: 200;
     }
     .modal-content {
         position: absolute;
@@ -326,7 +346,7 @@ main section div > div#jedis-var{
 	padding-top: 0;
 	position: relative;
 	margin-top: 0;
-	margin-left: 59%;
+	left: 30%;
 }
 
 .searchf i {
@@ -392,7 +412,7 @@ main section div > div p.cont {
 	font-size: 1em;
 	padding: 20px;
 	text-align: center;
-	width: 30%;
+	width: 28%;
 }
 
 .data .totalsprint {
