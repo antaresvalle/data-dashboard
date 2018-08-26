@@ -1,12 +1,8 @@
-# Data Dashboard
+# Data Dashboard Bootcamp @ Laboratoria
 
-* **Track:** _Common Core_
-* **Curso:** _Creando tu primer sitio web interactivo_
-* **Unidad:** _Producto final_
+![Preview](assets/images/preview.jpg)
 
-***
-
-## INTRODUCCION
+## INTRODUCCIÓN
 
 Las Training Managers (TMs) de Laboratoria tienen como función identificar las necesidades de capacitación y entrenamiento actuales y futuras de las estudiantes, así como la evaluación continua del rendimiento, desempeño, funcionamiento y ejecución de los planes de entrenamiento a lo largo de todo el proceso de capacitación.
 
@@ -79,3 +75,5 @@ Preview Sketch:
 
 ![Preview Sketch](assets/images/preview-sketch.png)
 
+## Desarrollado para 
+[Laboratoria](http://laboratoria.la)
