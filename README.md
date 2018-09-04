@@ -1,6 +1,6 @@
 # Data Dashboard Bootcamp @ Laboratoria
 
-![Preview](assets/images/preview.jpg)
+![Preview](https://user-images.githubusercontent.com/37418496/45056007-3bfed580-b057-11e8-9bd8-666af7d84d1f.jpg)
 
 ## INTRODUCCIÓN
 
